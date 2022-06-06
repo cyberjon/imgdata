@@ -32,7 +32,7 @@ ini_set('error_reporting', E_ERROR);
                     <h3>Select image to upload:</h3>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="file" name="fileToUpload" id="fileToUpload" required>
                         </div>
                         <div class="col-md-6">
                             <input type="submit" value="Upload Image" name="submit">
@@ -46,7 +46,7 @@ ini_set('error_reporting', E_ERROR);
                 <form method="post" action="upload.php">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="img_url" placeholder="Enter Image URL">
+                            <input type="text" name="img_url" placeholder="Enter Image URL" required>
                         </div>
                         <div class="col-md-6">
                             <input type="submit" name="get_image" value="Submit">
