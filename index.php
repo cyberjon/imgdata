@@ -9,7 +9,7 @@ ini_set('error_reporting', E_ERROR);
     $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 20;
     $page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
     $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 7;
-    $query      = "SELECT * FROM data";
+    $query      = "SELECT * FROM data order by id DESC";
 
     $Paginator  = new Paginator( $conn, $query );
 
