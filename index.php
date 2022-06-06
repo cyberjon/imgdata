@@ -49,7 +49,7 @@ ini_set('error_reporting', E_ERROR);
                             <input type="text" name="img_url" placeholder="Enter Image URL" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" name="get_image" value="Submit">
+                            <input type="submit" name="get_image" value="Upload Image">
                         </div>
                     </div>
                 </form>
