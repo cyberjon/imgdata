@@ -93,7 +93,7 @@ ini_set('error_reporting', E_ERROR);
                     Swal.fire({
                         title: 'Click on the image to download it',
                         html: `
-                        <a target="_blank" href="${data.image_file}"><img width="300" src="${data.image_file}"></a>
+                        <a target="_blank" href="${data.image_file}"><img width="284" src="${data.image_file}"></a>
                         <table class="table table-striped table-condensed table-bordered table-rounded">
                             <thead>
                             </thead>
