@@ -30,6 +30,7 @@ ini_set('error_reporting', E_ERROR);
                 <h1>Image metadata</h1>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <h3>Select image to upload:</h3>
+                    <hr />
                     <div class="row">
                         <div class="col-md-6">
                             <input type="file" name="fileToUpload" id="fileToUpload" required>
@@ -44,6 +45,8 @@ ini_set('error_reporting', E_ERROR);
                 <br />
                 <div id="text_div">
                 <form method="post" action="upload.php">
+                    <h3>Input image URL to upload:</h3>
+                    <hr />
                     <div class="row">
                         <div class="col-md-6">
                             <input style="width: 100%;" type="text" name="img_url" placeholder="Enter Image URL" required>
