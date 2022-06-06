@@ -46,7 +46,7 @@ ini_set('error_reporting', E_ERROR);
                 <form method="post" action="upload.php">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="img_url" placeholder="Enter Image URL" required>
+                            <input style="width: 100%;" type="text" name="img_url" placeholder="Enter Image URL" required>
                         </div>
                         <div class="col-md-6">
                             <input type="submit" name="get_image" value="Upload Image">
