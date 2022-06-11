@@ -19,8 +19,7 @@ if (isset($_POST["submit"])) {
         echo "Sorry, your file was not uploaded.";
         header("refresh:2; url=index.php");
     }
-}
-else if (isset($_POST["get_image"])) {
+} else if (isset($_POST["get_image"])) {
     try {
         $url=$_POST['img_url'];
         $u = new Uploads(TARGET);
