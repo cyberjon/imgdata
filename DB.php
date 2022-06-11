@@ -23,8 +23,7 @@ class DB
 
     public function result($sql)
     {
-        $conn = $this->conn();
-        return $conn->query($sql);
+        return $this->conn()->query($sql);
     }
 }
 
