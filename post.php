@@ -22,8 +22,8 @@ if (isset($_POST["submit"])) {
 }
 else if (isset($_POST["get_image"])) {
     try {
-        $u = new Uploads(TARGET);
         $url=$_POST['img_url'];
+        $u = new Uploads(TARGET);
         $u->uploadFromUrl($url);
     } catch (\Throwable $th) {
         echo "Sorry, your file was not uploaded.";
