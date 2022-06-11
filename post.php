@@ -11,10 +11,10 @@ define('TARGET', 'uploads/');
 
 if (isset($_POST["submit"])) {
     try {
+        $tempFile = $_FILES["fileToUpload"]["tmp_name"];
+        $fileName = basename($_FILES["fileToUpload"]["name"]);
         $u = new Uploads(TARGET);
-        $temp_file = $_FILES["fileToUpload"]["tmp_name"];
-        $file_name = basename($_FILES["fileToUpload"]["name"]);
-        $u->upload($temp_file, $file_name);
+        $u->upload($tempFile, $fileName);
     } catch (\Throwable $th) {
         echo "Sorry, your file was not uploaded.";
         header("refresh:2; url=index.php");
