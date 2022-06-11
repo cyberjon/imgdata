@@ -14,7 +14,7 @@ class Uploads
         $name = basename($url);
         $data = file_get_contents($url);
         $new = $this->targetDir.$name;
-        $imageFileType = strtolower(pathinfo ($new,PATHINFO_EXTENSION));
+        $imageFileType = strtolower(pathinfo($new,PATHINFO_EXTENSION));
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         } else if (file_exists($new)) {
