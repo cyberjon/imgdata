@@ -1,22 +1,22 @@
 <?php
-    namespace ImageData;
+namespace ImageData;
 
-    require_once 'DB.php';
-    require_once 'Paginator.php';
+require_once 'DB.php';
+require_once 'Paginator.php';
 
-    error_reporting(0);
-    ini_set('error_reporting', E_ERROR);
- 
-    $db = new DB();
-    $conn = $db->conn();
+error_reporting(0);
+ini_set('error_reporting', E_ERROR);
 
-    $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 5;
-    $page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
-    $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
-    
-    $query      = "SELECT * FROM data order by id DESC";
-    $Paginator  = new Paginator( $conn, $query );
-    $results    = $Paginator->getData( $limit, $page );
+$db = new DB();
+$conn = $db->conn();
+
+$limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 5;
+$page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
+$links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
+
+$query      = "SELECT * FROM data order by id DESC";
+$Paginator  = new Paginator( $conn, $query );
+$results    = $Paginator->getData( $limit, $page );
 ?>
 <!DOCTYPE html>
     <head>
