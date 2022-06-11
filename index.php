@@ -1,18 +1,21 @@
 <?php
-error_reporting(0);
-ini_set('error_reporting', E_ERROR);
-    require_once 'config.php';
-    require_once 'Paginator.class.php';
+    namespace ImageData;
 
-    $conn       = new mysqli( $db_host, $db_user, $db_pass, $db_name );
+    require_once 'DB.php';
+    require_once 'Paginator.php';
 
-    $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 20;
+    error_reporting(0);
+    ini_set('error_reporting', E_ERROR);
+ 
+    $db = new DB();
+    $conn = $db->conn();
+
+    $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 5;
     $page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
-    $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 7;
+    $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
+    
     $query      = "SELECT * FROM data order by id DESC";
-
     $Paginator  = new Paginator( $conn, $query );
-
     $results    = $Paginator->getData( $limit, $page );
 ?>
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ ini_set('error_reporting', E_ERROR);
         <div class="container">
                 <div class="col-md-10 col-md-offset-1">
                 <h1>Image metadata</h1>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="post.php" method="post" enctype="multipart/form-data">
                     <h3>Select image to upload:</h3>
                     <hr />
                     <div class="row">
@@ -44,7 +47,7 @@ ini_set('error_reporting', E_ERROR);
                 <hr />
                 <br />
                 <div id="text_div">
-                <form method="post" action="upload.php">
+                <form method="post" action="post.php">
                     <h3>Input image URL to upload:</h3>
                     <hr />
                     <div class="row">
@@ -87,9 +90,10 @@ ini_set('error_reporting', E_ERROR);
         $(document).ready(function(){
             $('.show').click(function(){
                 var id = $(this).attr('data-id');
-                $.post("ajax.php",
+                $.post("post.php",
                 {
-                    id: id
+                    id: id,
+                    ajax_data: true
                 },
                 function(data, status){
                     data = JSON.parse(data);
