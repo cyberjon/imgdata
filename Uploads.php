@@ -9,7 +9,6 @@ class Uploads
     {
         $this->targetDir = $targetDir;
     }
-
     public function uploadFromUrl($url)
     {
         $name = basename($url);
@@ -26,7 +25,6 @@ class Uploads
         }
         header("refresh:2; url=index.php");
     }
-
     public function upload($temp_file, $file_name)
     {
         $target_file = $this->targetDir.$file_name;

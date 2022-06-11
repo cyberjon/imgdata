@@ -15,12 +15,10 @@ class DB
         $this->db_user = 'img_data';
         $this->db_pass = '12345678';
     }
-
     public function conn()
     {
         return new \mysqli( $this->db_host, $this->db_user, $this->db_pass, $this->db_name );
     }
-
     public function result($sql)
     {
         return $this->conn()->query($sql);
